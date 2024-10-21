@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Tester
 {
     public class Person
-        {
+    {
             public int X { get; set; }
             public int Y { get; set; }
             public List<string> Inventory { get; set; } = new List<string>();
@@ -30,7 +30,7 @@ namespace Tester
 
                 }
             }
-        }
+    }
 
         // Subclass citizen
         public class Citizen : Person
@@ -52,9 +52,9 @@ namespace Tester
                     Random random = new Random();
                     int itemIndex = random.Next(citizen.Inventory.Count);
                     string stolenItem = citizen.Inventory[itemIndex];// val en random  item
-                    citizen.Inventory.RemoveAt(itemIndex);// ta fron medborjare
+                    citizen.Inventory.RemoveAt(itemIndex);// ta from medborjare
                     Inventory.Add(stolenItem); // add till tjuv inventory
-                    Console.WriteLine($"Tjuven stal {stolenItem} from Medborgare.");
+                    Console.WriteLine($"Tjuven stal {stolenItem} from Medborgare i positionen ({X},{Y}).");
                 }
             }
         }
@@ -69,7 +69,11 @@ namespace Tester
                 {
                     Inventory.AddRange(thief.Inventory);
                     thief.Inventory.Clear();
-                    Console.WriteLine($"Polisen belagtog: {string.Join(", ", Inventory)}.");
+                    Console.WriteLine($"Polisen i positionen ({X},{Y}) beslagtog: {string.Join(", ", Inventory)}.");
+                }
+                else
+                {
+                    Console.WriteLine($"Polisen fångade tjuven at ({X},{Y}) , men utan bevis .");
                 }
             }
         }

@@ -55,7 +55,7 @@ namespace Tester
 
                     cityGrid[person.Y, person.X] = symbol;
                 }
-                Console.WriteLine($"Totala antalet ran : {totalRoberies}");
+                Console.WriteLine($"Totala antalet rån : {totalRoberies}");
                 Console.WriteLine($"Totala antalet gripanden : {totalArrest}");
 
                 // grid display
@@ -88,13 +88,19 @@ namespace Tester
                             }
                             else if (persons[i] is Police police && persons[j] is Thief thief2)
                             {
+                               
                                 police.Arrest(thief2);
                                 totalArrest++;
+                                Thread.Sleep(1000);
+                                
                             }
                             else if (persons[i] is Thief thief3 && persons[j] is Police police1)
                             {
+                                
                                 police1.Arrest(thief3);
                                 totalArrest++;
+                                Thread.Sleep(1000);
+                               
                             }
                         }
                     }
