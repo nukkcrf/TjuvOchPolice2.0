@@ -12,8 +12,13 @@ namespace TjuvOchPolis
         {
             CitySimulation simulation = new CitySimulation();
             simulation.RunSimulation();
+
+            int jailHeight = 5; // Dimension
+            int jailWidth = 5;  
+            char[,] jailGrid = new char[jailWidth, jailHeight]; // Grid
+
             Jail jailSimulation  = new Jail();
-            //jailSimulation.DisplayJail();
+            jailSimulation.DisplayJail(jailGrid,jailHeight,jailWidth);
 
          
         }
