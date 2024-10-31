@@ -12,6 +12,8 @@ namespace TjuvOchPolis
         {
             CitySimulation simulation = new CitySimulation();
             simulation.RunSimulation();
+            Jail jailSimulation  = new Jail();
+            //jailSimulation.DisplayJail();
 
          
         }

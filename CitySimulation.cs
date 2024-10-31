@@ -14,6 +14,8 @@ namespace Tester
         private Random random = new Random();
         private int cityWidth = 60;
         private int cityHeight = 20;
+        private int jailWidth = 15;
+        private int jailHeight = 25;
 
         public CitySimulation()
         {
@@ -44,6 +46,7 @@ namespace Tester
 
                 // staden
                 char[,] cityGrid = new char[cityHeight, cityWidth];
+                char[,] jailGrid = new char[jailHeight, jailWidth];
 
                 // stopa i personer i staden
                 foreach (var person in persons)
@@ -65,10 +68,10 @@ namespace Tester
                     {
                         char symbol = cityGrid[y, x];
                         Console.Write(symbol + " ");
+                   
                     }
                     Console.WriteLine();
                 }
-
                 // om personerna mots
                 for (int i = 0; i < persons.Count; i++)
                 {
@@ -91,7 +94,7 @@ namespace Tester
                                
                                 police.Arrest(thief2);
                                 totalArrest++;
-                                Thread.Sleep(1000);
+                                Thread.Sleep(1500);
                                 
                             }
                             else if (persons[i] is Thief thief3 && persons[j] is Police police1)
